@@ -19,18 +19,28 @@
     }
     h1 { margin: 0 0 12px; font-size: 26px; }
     p { line-height: 1.9; font-size: 20px; margin: 10px 0; }
-    .icon { font-size: 40px; margin-top: 20px; cursor: pointer; color: #555; }
+    .icon {
+      font-size: 50px; margin-top: 20px; cursor: pointer; color: goldenrod;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .icon:hover {
+      color: orange; transform: scale(1.3);
+    }
     .hidden { display: none; }
     input[type="password"], input[type="text"] {
       width: 100%; max-width: 360px; padding: 12px; font-size: 18px; border: 1px solid #ddd; border-radius: 10px;
     }
     button {
       margin-top: 12px; padding: 10px 16px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer;
-      background: #355c7d; color: #fff;
+      background: #355c7d; color: #fff; transition: background 0.3s;
     }
+    button:hover { background: #2a445d; }
     .error { color: #b00020; font-size: 16px; margin-top: 8px; }
     .gold-btn {
-      background: goldenrod; color: #fff; font-weight: bold;
+      background: goldenrod; color: #fff; font-weight: bold; transition: background 0.3s, transform 0.3s;
+    }
+    .gold-btn:hover {
+      background: orange; transform: scale(1.05);
     }
   </style>
 </head>
@@ -42,7 +52,7 @@
     <p>أسأل الله أن يتغمده بواسع رحمته، ويسكنه فسيح جناته.</p>
     <p>ثبتكم الله ورزقكم الصبر.</p>
 
-    <!-- أيقونة لفتح الرسالة الخاصة -->
+    <!-- أيقونة الحمامة لفتح الرسالة الخاصة -->
     <div class="icon" id="openSecret">🕊️</div>
 
     <!-- بوابة كلمة السر -->
@@ -59,9 +69,7 @@
       <h2>رسالة خاصة للطبيبة جليلة</h2>
       <p>
         دكتورة جليلة،  
-        أود أن أعبر لك عن امتناني العميق لما قدمته لي خلال فترة علاجي من متلازمة أسبرجر. لقد كان حضورك ودعمك سببًا في أن أتعلم كيف أفهم نفسي أكثر، وأتقبل نقاط قوتي وضعفي.  
-        لم يكن الأمر مجرد جلسات علاجية، بل كان رحلة إنسانية مليئة بالرحمة والفهم. كلماتك وإرشاداتك بقيت معي حتى بعد انتهاء العلاج، وأصبحت جزءًا من طريقي نحو حياة أكثر توازنًا وطمأنينة.  
-        أشكرك لأنك لم تريني كمريض فقط، بل كإنسان قادر على النمو والتطور. سيبقى أثر عملك معي حاضرًا دائمًا.
+        أود أن أعبر لك عن امتناني العميق لما قدمته لي خلال فترة علاجي من متلازمة أسبرجر...
       </p>
 
       <!-- إضافة خيار رقم الهاتف -->
@@ -83,6 +91,7 @@
     const secret = document.getElementById('secret');
     const err = document.getElementById('err');
 
+    // عند الضغط على الحمامة تظهر بوابة كلمة السر
     openSecret.addEventListener('click', () => {
       gate.classList.remove('hidden');
     });
