@@ -24,7 +24,8 @@
     h1 { margin: 0 0 12px; font-size: 26px; }
     p { line-height: 1.9; font-size: 20px; margin: 10px 0; }
     .icon {
-      font-size: 50px; margin-top: 20px; cursor: pointer; color: goldenrod;
+      position: relative;
+      font-size: 60px; margin-top: 20px; cursor: pointer; color: goldenrod;
       transition: transform 0.3s, color 0.3s;
       animation: blink 1.5s infinite; /* تأثير الرمش */
     }
@@ -33,9 +34,31 @@
     }
     @keyframes blink {
       0% { opacity: 1; }
-      40% { opacity: 0.2; }
+      40% { opacity: 0.3; }
       60% { opacity: 1; }
       100% { opacity: 1; }
+    }
+    /* الحلقات السحرية حول الحمامة */
+    .icon::before, .icon::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 120px; height: 120px;
+      border: 2px solid goldenrod;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      animation: pulse 2s infinite;
+      opacity: 0.6;
+    }
+    .icon::after {
+      width: 160px; height: 160px;
+      animation-delay: 1s;
+      opacity: 0.4;
+    }
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+      50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+      100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
     }
     .hidden { display: none; }
     input[type="password"], input[type="text"] {
