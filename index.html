@@ -12,7 +12,11 @@
       background: linear-gradient(-45deg, #e0eafc, #cfdef3, #f6f9fc, #dfe9f3);
       background-size: 400% 400%; animation: gradientBG 18s ease infinite;
     }
-    @keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    @keyframes gradientBG { 
+      0%{background-position:0% 50%} 
+      50%{background-position:100% 50%} 
+      100%{background-position:0% 50%} 
+    }
     .card {
       background: rgba(255,255,255,0.94); max-width: 760px; width: 100%; padding: 28px; border-radius: 16px;
       box-shadow: 0 12px 32px rgba(0,0,0,0.12); text-align: center;
@@ -22,9 +26,16 @@
     .icon {
       font-size: 50px; margin-top: 20px; cursor: pointer; color: goldenrod;
       transition: transform 0.3s, color 0.3s;
+      animation: blink 1.5s infinite; /* تأثير الرمش */
     }
     .icon:hover {
       color: orange; transform: scale(1.3);
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      40% { opacity: 0.2; }
+      60% { opacity: 1; }
+      100% { opacity: 1; }
     }
     .hidden { display: none; }
     input[type="password"], input[type="text"] {
@@ -57,7 +68,7 @@
 
     <!-- بوابة كلمة السر -->
     <div id="gate" class="hidden">
-      <p>تلميح: اسم الحالة التي كنتُ أتعالج منها، تُكتب بالعربية.</p>
+      <p>تلميح: كلمة متعارفة بيني وبينك تمثلني.</p>
       <input type="password" id="pw" placeholder="أدخل كلمة السر" />
       <br>
       <button id="unlock">فتح الرسالة</button>
@@ -66,10 +77,12 @@
 
     <!-- الرسالة الخاصة -->
     <div id="secret" class="hidden">
-      <h2>رسالة خاصة للطبيبة جليلة</h2>
+      <h2>رسالة خاصة إلى جليلة</h2>
       <p>
-        دكتورة جليلة،  
-        أود أن أعبر لك عن امتناني العميق لما قدمته لي خلال فترة علاجي من متلازمة أسبرجر...
+        جليلة،  
+        أود أن أعبر لك عن امتناني العميق لما قدمته لي خلال فترة علاجي من متلازمة أسبرجر. لقد كان حضورك ودعمك سببًا في أن أتعلم كيف أفهم نفسي أكثر، وأتقبل نقاط قوتي وضعفي.  
+        لم يكن الأمر مجرد جلسات علاجية، بل كان رحلة إنسانية مليئة بالرحمة والفهم. كلماتك وإرشاداتك بقيت معي حتى بعد انتهاء العلاج، وأصبحت جزءًا من طريقي نحو حياة أكثر توازنًا وطمأنينة.  
+        أشكرك لأنك لم تريني كمريض فقط، بل كإنسان قادر على النمو والتطور. سيبقى أثر عملك معي حاضرًا دائمًا.
       </p>
 
       <!-- إضافة خيار رقم الهاتف -->
