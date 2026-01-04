@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>صفحة التعزية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Amiri', serif;
+      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px;
+      background: linear-gradient(-45deg, #e0eafc, #cfdef3, #f6f9fc, #dfe9f3);
+      background-size: 400% 400%; animation: gradientBG 18s ease infinite;
+    }
+    @keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .card {
+      background: rgba(255,255,255,0.94); max-width: 760px; width: 100%; padding: 28px; border-radius: 16px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12); text-align: center;
+    }
+    h1 { margin: 0 0 12px; font-size: 26px; }
+    p { line-height: 1.9; font-size: 20px; margin: 10px 0; }
+    .icon { font-size: 40px; margin-top: 20px; cursor: pointer; color: #555; }
+    .hidden { display: none; }
+    input[type="password"] {
+      width: 100%; max-width: 360px; padding: 12px; font-size: 18px; border: 1px solid #ddd; border-radius: 10px;
+    }
+    button {
+      margin-top: 12px; padding: 10px 16px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer;
+      background: #355c7d; color: #fff;
+    }
+    .error { color: #b00020; font-size: 16px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>إنا لله وإنا إليه راجعون</h1>
+    <p>رحم الله والدكم، وعظم الله أجركم.</p>
+    <p>أسأل الله أن يتغمده بواسع رحمته، ويسكنه فسيح جناته.</p>
+    <p>ثبتكم الله ورزقكم الصبر.</p>
+
+    <!-- أيقونة لفتح الرسالة الخاصة -->
+    <div class="icon" id="openSecret">🕊️</div>
+
+    <!-- بوابة كلمة السر -->
+    <div id="gate" class="hidden">
+      <p>تلميح: كلمة متعارفة بيني وبينك تمثلني.</p>
+      <input type="password" id="pw" placeholder="أدخل كلمة السر" />
+      <br>
+      <button id="unlock">فتح الرسالة</button>
+      <div class="error" id="err"></div>
+    </div>
+
+    <!-- الرسالة الخاصة -->
+    <div id="secret" class="hidden">
+      <h2>رسالة خاصة للطبيبة</h2>
+      <p>دكتورة [جليلة]،  
+      أود أن أعبر لك عن امتناني العميق لما قدمته لي خلال فترة علاجي . لقد كان حضورك ودعمك سببًا في أن أتعلم كيف أفهم نفسي أكثر، وأتقبل نقاط قوتي وضعفي.  
+      لم يكن الأمر مجرد جلسات علاجية، بل كان رحلة إنسانية مليئة بالرحمة والفهم. كلماتك وإرشاداتك بقيت معي حتى بعد انتهاء العلاج، وأصبحت جزءًا من طريقي نحو حياة أكثر توازنًا وطمأنينة.  
+      أشكرك لأنك لم تريني كمريض فقط، بل كإنسان قادر على النمو والتطور. سيبقى أثر عملك معي حاضرًا دائمًا.</p>
+    </div>
+  </main>
+
+  <script>
+    const PASSWORD = "اسبرجر";
+    const openSecret = document.getElementById('openSecret');
+    const gate = document.getElementById('gate');
+    const secret = document.getElementById('secret');
+    const err = document.getElementById('err');
+
+    openSecret.addEventListener('click', () => {
+      gate.classList.remove('hidden');
+    });
+
+    document.getElementById('unlock').addEventListener('click', () => {
+      const input = document.getElementById('pw').value.trim();
+      if (input === PASSWORD) {
+        gate.classList.add('hidden');
+        secret.classList.remove('hidden');
+      } else {
+        err.textContent = "كلمة السر غير صحيحة. جرّب التلميح.";
+      }
+    });
+  </script>
+</body>
+</html>
