@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>رسالة تعزية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: "Tahoma", Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      max-width: 700px;
+      width: 100%;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: 26px;
+      color: #222;
+    }
+    p {
+      line-height: 1.9;
+      font-size: 18px;
+      margin: 12px 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>إنا لله وإنا إليه راجعون</h1>
+    <p>رحم الله والدكم، وعظم الله أجركم.</p>
+    <p>أسأل الله أن يتغمده بواسع رحمته، ويسكنه فسيح جناته.</p>
+    <p>أسأل الله العظيم رب العرش العظيم أن يغفر ذنبه، ويرحم ضعفه، ويوسع له في قبره، وألا يفتنا بعده.</p>
+    <p>ثبتكم الله أختنا الكريمة، ورزقكم الصبر.</p>
+  </main>
+</body>
+</html>
