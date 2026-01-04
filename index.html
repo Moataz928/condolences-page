@@ -29,6 +29,9 @@
       background: #355c7d; color: #fff;
     }
     .error { color: #b00020; font-size: 16px; margin-top: 8px; }
+    .gold-btn {
+      background: goldenrod; color: #fff; font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -98,8 +101,8 @@
       const phone = document.getElementById('phoneInput').value.trim();
       if (phone) {
         document.getElementById('savedPhone').innerHTML =
-          `<button onclick="window.location.href='mailto:${myEmail}?subject=إرسال رقم الهاتف&body=رقمي هو: ${phone}'">
-            📧 أرسل الرقم إلى بريدي
+          `<button class="gold-btn" onclick="window.location.href='mailto:${myEmail}?subject=إرسال رقم الهاتف&body=رقمي هو: ${phone}'">
+            📧 أرسل الرقم إلى بريدي (${myEmail})
           </button>`;
       } else {
         document.getElementById('savedPhone').textContent = "لم يتم إدخال رقم.";
